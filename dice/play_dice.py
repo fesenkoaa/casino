@@ -1,3 +1,5 @@
+"""Dice"""
+
 import random
 import sys
 
@@ -8,7 +10,7 @@ def need_help():
     print("c - credit")
     print("t - throw\n")
     print("h - help")
-    print("x - exit\n")
+    print("x - exit\n\n")
 
 
 need_help()
@@ -30,7 +32,7 @@ while True:
     elif command == "credit":
         credit = input("Enter credit: ")
         credit = int(credit)
-        print(f"Your money: {credit}$")
+        print(f"Your money: {credit}$\n\n")
     elif command == "bet":
         bet = input("Bet: ")
         if bet == "all":
@@ -38,13 +40,13 @@ while True:
         else:
             bet = int(bet)
         if bet > credit:
-            print("You don't have enough money!")
+            print("You don't have enough money!\n\n")
             bet = 0
         else:
             credit -= bet
     elif command == "throw":
         if bet == 0:
-            print("You haven\'t bet yet!")
+            print("You haven\'t bet yet!\n\n")
         else:
             val1 = random.randrange(1, 6)
             val2 = random.randrange(1, 6)
